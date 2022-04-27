@@ -7,15 +7,17 @@ import spacy
 import pprint
 from spacy.matcher import Matcher
 from . import utils
+from pprint import pprint
 
 
 class ResumeParser(object):
 
     def __init__(
         self,
-        resume,
+        resume=None,
         skills_file=None,
-        custom_regex=None
+        custom_regex=None,
+        resume_text=None
     ):
         nlp = spacy.load('en_core_web_sm')
         custom_nlp = spacy.load(os.path.dirname(os.path.abspath(__file__)))
@@ -35,12 +37,18 @@ class ResumeParser(object):
             'no_of_pages': None,
             'total_experience': None,
         }
+
         self.__resume = resume
         if not isinstance(self.__resume, io.BytesIO):
             ext = os.path.splitext(self.__resume)[1].split('.')[1]
         else:
             ext = self.__resume.name.split('.')[1]
-        self.__text_raw = utils.extract_text(self.__resume, '.' + ext)
+
+        if resume_text:
+            self.__text_raw = resume_text
+        else:
+            self.__text_raw = utils.extract_text(self.__resume, '.' + ext)
+
         self.__text = ' '.join(self.__text_raw.split())
         self.__nlp = nlp(self.__text)
         self.__custom_nlp = custom_nlp(self.__text_raw)
@@ -134,7 +142,7 @@ if __name__ == '__main__':
 
     resumes = []
     data = []
-    for root, directories, filenames in os.walk('resumes/'):
+    for root, directories, filenames in os.walk('resumes'):
         for filename in filenames:
             file = os.path.join(root, filename)
             resumes.append(file)
