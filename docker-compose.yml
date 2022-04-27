@@ -1,0 +1,13 @@
+version: '3'
+services:
+  pyresparser:
+    build:
+      context: .
+      args:
+        IS_DEV: "true"
+    working_dir: /pyresparser
+    volumes:
+      - ./pyresparser:/pyresparser:cached
+    ports:
+      - "8491:80"
+    hostname: pyresparser
