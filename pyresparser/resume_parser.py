@@ -7,7 +7,6 @@ import spacy
 import pprint
 from spacy.matcher import Matcher
 from . import utils
-from pprint import pprint
 
 
 class ResumeParser(object):
@@ -17,7 +16,7 @@ class ResumeParser(object):
         resume=None,
         skills_file=None,
         custom_regex=None,
-        resume_text=None
+        resume_text=None,
     ):
         nlp = spacy.load('en_core_web_sm')
         custom_nlp = spacy.load(os.path.dirname(os.path.abspath(__file__)))
@@ -37,7 +36,6 @@ class ResumeParser(object):
             'no_of_pages': None,
             'total_experience': None,
         }
-
         self.__resume = resume
 
         if resume_text:
@@ -126,10 +124,10 @@ class ResumeParser(object):
                 self.__details['total_experience'] = 0
         except KeyError:
             self.__details['total_experience'] = 0
-        if self.__resume: 
+        if self.__resume:
             self.__details['no_of_pages'] = utils.get_number_of_pages(
-                                            self.__resume
-                                        )
+                                                self.__resume
+                                            )
         return
 
 
