@@ -1,13 +1,13 @@
 version: '3'
 services:
-  pyresparser:
+  electiveGroupCvParser:
     build:
       context: .
       args:
         IS_DEV: "true"
-    working_dir: /pyresparser
+    working_dir: /electiveGroupCvParser
     volumes:
-      - ./pyresparser:/pyresparser:cached
+      - ./electiveGroupCvParser:/electiveGroupCvParser:cached
     ports:
       - "8491:80"
-    hostname: pyresparser
+    hostname: electiveGroupCvParser

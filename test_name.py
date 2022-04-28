@@ -5,7 +5,7 @@ import io
 import multiprocessing as mp
 import urllib
 from urllib.request import Request, urlopen
-from pyresparser import ResumeParser
+from electiveGroupCvParser import ResumeParser
 
 def get_remote_data():
     try:

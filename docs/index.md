@@ -1,4 +1,4 @@
-# Pyresparser
+# electiveGroupCvParser
 
 A simple resume parser used for extracting information from resumes
 
@@ -21,7 +21,7 @@ A simple resume parser used for extracting information from resumes
 - You can install this package using
 
 ```bash
-pip install pyresparser
+pip install electiveGroupCvParser
 ```
 
 - For NLP operations we use spacy and nltk. Install them using below commands:
@@ -40,7 +40,7 @@ python -m nltk.downloader stopwords
 - Import it in your Python project
 
 ```python
-from pyresparser import ResumeParser
+from electiveGroupCvParser import ResumeParser
 data = ResumeParser('/path/to/resume/file').get_extracted_data()
 ```
 
@@ -90,20 +90,20 @@ The module would return a list of dictionary objects with result as follows:
 
 ## Explicitly specifying skills file
 
-Pyresparser comes with built-in skills file that defaults to many technical skills. You can find the default skills file [here](https://github.com/OmkarPathak/pyresparser/blob/master/pyresparser/skills.csv).
+electiveGroupCvParser comes with built-in skills file that defaults to many technical skills. You can find the default skills file [here](https://github.com/OmkarPathak/electiveGroupCvParser/blob/master/electiveGroupCvParser/skills.csv).
 
 For extracting data against your specified skills, create a CSV file with no headers.
 
 ```python
-from pyresparser import ResumeParser
+from electiveGroupCvParser import ResumeParser
 data = ResumeParser('/path/to/resume/file', skills_file='/path/to/skills.csv').get_extracted_data()
 ```
 
 ## Explicitly providing regex to parse phone numbers
 
-While pyresparser parses most of the phone numbers correctly, there is a possibility of new patterns being added in near future. Hence, we can explicitly provide the regex required to parse the desired phone numbers. This can be done using
+While electiveGroupCvParser parses most of the phone numbers correctly, there is a possibility of new patterns being added in near future. Hence, we can explicitly provide the regex required to parse the desired phone numbers. This can be done using
 
 ```python
-from pyresparser import ResumeParser
+from electiveGroupCvParser import ResumeParser
 data = ResumeParser('/path/to/resume/file', custom_regex='pattern').get_extracted_data()
 ```

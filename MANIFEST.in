@@ -1,8 +1,8 @@
 include README.md
-include bin/pyresparser.py
+include bin/electiveGroupCvParser.py
 
-recursive-include pyresparser *
+recursive-include electiveGroupCvParser *
 
-exclude pyresparser/traindata.json
-exclude pyresparser/custom_train.py
-exclude pyresparser/custom_test.py
+exclude electiveGroupCvParser/traindata.json
+exclude electiveGroupCvParser/custom_train.py
+exclude electiveGroupCvParser/custom_test.py

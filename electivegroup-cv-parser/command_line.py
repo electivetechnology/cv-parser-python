@@ -9,7 +9,7 @@ import sys
 import multiprocessing as mp
 import urllib
 from urllib.request import Request, urlopen
-from pyresparser import ResumeParser
+from electiveGroupCvParser import ResumeParser
 
 
 def print_cyan(text):
