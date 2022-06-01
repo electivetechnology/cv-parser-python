@@ -402,7 +402,7 @@ def extract_skills(nlp_text, noun_chunks, skills_file=None, skills_list=None):
             )
         else:
             data = pd.read_csv(skills_file)
-            skills = list(data.columns.values)
+        skills = list(data.columns.values)
         
     skillset = []
 

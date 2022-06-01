@@ -5,7 +5,7 @@ here = path.abspath(path.dirname(__file__))
 
 setup(
     name='electivegroup',
-    version='1.0.62',
+    version='1.0.63',
     description='A simple resume parser used for extracting information from resumes',
     long_description=open('README.rst').read(),
     url='https://github.com/electivetechnology/cv-parser-python',
