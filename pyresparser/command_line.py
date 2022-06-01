@@ -116,7 +116,7 @@ class ResumeParserCli(object):
     def __extract_from_file(self, file, skills_file=None, custom_regex=None):
         if os.path.exists(file):
             print_cyan('Extracting data from: {}'.format(file))
-            resume_parser = ResumeParser(resume_text="Chris Dixon6")
+            resume_parser = ResumeParser(resume=file, skills_file=skills_file, custom_regex=custom_regex)
             return [resume_parser.get_extracted_data()]
         else:
             print('File not found. Please provide a valid file name')
@@ -157,7 +157,7 @@ class ResumeParserCli(object):
             webpage = urlopen(req).read()
             _file = io.BytesIO(webpage)
             _file.name = remote_file.split('/')[-1]
-            resume_parser = ResumeParser(_file, skills_file, custom_regex)
+            resume_parser = ResumeParser(resume=_file, skills_file=skills_file, custom_regex=custom_regex)
             return [resume_parser.get_extracted_data()]
         except urllib.error.HTTPError:
             print('File not found. Please provide correct URL for resume file')
