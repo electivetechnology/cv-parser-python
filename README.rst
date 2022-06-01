@@ -5,13 +5,8 @@ pyresparser
 
     A simple resume parser used for extracting information from resumes
 
-Built with ❤︎ and :coffee: by `Omkar
-Pathak <https://github.com/OmkarPathak>`__
-
---------------
-
-|GitHub stars| |PyPI| |Downloads| |GitHub| |PyPI - Python Version| |Say
-Thanks!| |Build Status| |codecov|
+Forked from Omkar Pathak (https://github.com/OmkarPathak/pyresparser) 
+Customised by [Chris Dixon](https://github.com/chris-wm)
 
 Features
 ========
@@ -140,51 +135,3 @@ follows:
         'total_experience': 1.83
       }
     ]
-
-References that helped me get here
-==================================
-
--  https://www.kaggle.com/nirant/hitchhiker-s-guide-to-nlp-in-spacy
-
--  https://www.analyticsvidhya.com/blog/2017/04/natural-language-processing-made-easy-using-spacy-%E2%80%8Bin-python/
-
--  [https://medium.com/@divalicious.priya/information-extraction-from-cv-acec216c3f48](https://medium.com/@divalicious.priya/information-extraction-from-cv-acec216c3f48)
-
--  **Special thanks** to dataturks for their `annotated
-   dataset <https://dataturks.com/blog/named-entity-recognition-in-resumes.php>`__
-
-Donation
-========
-
-If you have found my softwares to be of any use to you, do consider
-helping me pay my internet bills. This would encourage me to create many
-such softwares :smile:
-
-+-----------+----+
-| PayPal    |    |
-+===========+====+
-| ₹ (INR)   |    |
-+-----------+----+
-
-Stargazer over time
-===================
-
-|Stargazers over time|
-
-.. |GitHub stars| image:: https://img.shields.io/github/stars/OmkarPathak/pyresparser.svg
-   :target: https://github.com/OmkarPathak/pyresparser/stargazers
-.. |PyPI| image:: https://img.shields.io/pypi/v/pyresparser.svg
-   :target: https://pypi.org/project/pyresparser/
-.. |Downloads| image:: https://pepy.tech/badge/pyresparser
-   :target: https://pepy.tech/project/pyresparser
-.. |GitHub| image:: https://img.shields.io/github/license/omkarpathak/pyresparser.svg
-   :target: https://github.com/OmkarPathak/pyresparser/blob/master/LICENSE
-.. |PyPI - Python Version| image:: https://img.shields.io/pypi/pyversions/Django.svg
-.. |Say Thanks!| image:: https://img.shields.io/badge/Say%20Thanks-:D-1EAEDB.svg
-   :target: https://saythanks.io/to/OmkarPathak
-.. |Build Status| image:: https://travis-ci.com/OmkarPathak/pyresparser.svg?branch=master
-   :target: https://travis-ci.com/OmkarPathak/pyresparser
-.. |codecov| image:: https://codecov.io/gh/OmkarPathak/pyresparser/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/OmkarPathak/pyresparser
-.. |Stargazers over time| image:: https://starchart.cc/OmkarPathak/pyresparser.svg
-   :target: https://starchart.cc/OmkarPathak/pyresparser
