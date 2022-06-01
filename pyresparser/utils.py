@@ -382,7 +382,7 @@ def extract_mobile_number(text, custom_regex=None):
         return number
 
 
-def extract_skills(nlp_text, noun_chunks, skills_file=None):
+def extract_skills(nlp_text, noun_chunks, skills_file=None, skills_list=None):
     '''
     Helper function to extract skills from spacy nlp text
 
@@ -391,14 +391,21 @@ def extract_skills(nlp_text, noun_chunks, skills_file=None):
     :return: list of skills extracted
     '''
     tokens = [token.text for token in nlp_text if not token.is_stop]
-    if not skills_file:
-        data = pd.read_csv(
-            os.path.join(os.path.dirname(__file__), 'skills.csv')
-        )
+
+    # use skill list if provided, then skill file and finally default csv if nothing is provided
+    if skills_list != None :
+        skills = skills_list
     else:
-        data = pd.read_csv(skills_file)
-    skills = list(data.columns.values)
+        if not skills_file:
+            data = pd.read_csv(
+                os.path.join(os.path.dirname(__file__), 'skills.csv')
+            )
+        else:
+            data = pd.read_csv(skills_file)
+            skills = list(data.columns.values)
+        
     skillset = []
+
     # check for one-grams
     for token in tokens:
         if token.lower() in skills:

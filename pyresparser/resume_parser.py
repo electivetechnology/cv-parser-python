@@ -65,14 +65,12 @@ class ResumeParser(object):
         name = utils.extract_name(self.__nlp, matcher=self.__matcher)
         email = utils.extract_email(self.__text)
         mobile = utils.extract_mobile_number(self.__text, self.__custom_regex)
-        if self.__skills_file != None:
-            skills = utils.extract_skills(
-                    self.__nlp,
-                    self.__noun_chunks,
-                    self.__skills_file
-                )
-        else :
-            skills = self.__skills_list
+        skills = utils.extract_skills(
+                self.__nlp,
+                self.__noun_chunks,
+                self.__skills_file,
+                self.__skills_list
+            )
         # edu = utils.extract_education(
         #               [sent.string.strip() for sent in self.__nlp.sents]
         #       )
